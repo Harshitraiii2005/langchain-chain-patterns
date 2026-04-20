@@ -1,0 +1,65 @@
+===== SUMMARIZATION CHAIN GRAPH =====
+     +-------------+       
+     | PromptInput |       
+     +-------------+       
+            *              
+            *              
+            *              
+    +----------------+     
+    | PromptTemplate |     
+    +----------------+     
+            *              
+            *              
+            *              
+      +----------+         
+      | ChatGroq |         
+      +----------+         
+            *              
+            *              
+            *              
+   +-----------------+     
+   | StrOutputParser |     
+   +-----------------+     
+            *              
+            *              
+            *              
++-----------------------+  
+| StrOutputParserOutput |  
++-----------------------+  
+
+
+===== ORIGINAL DOCUMENT =====
+
+Artificial Intelligence (AI) has become one of the most transformative technologies of our time. 
+It encompasses a wide range of capabilities including machine learning, natural language processing, 
+computer vision, and robotics. AI is being used in various industries such as healthcare, finance, 
+manufacturing, and entertainment. In healthcare, AI is helping doctors diagnose diseases more accurately 
+and quickly. In finance, it's being used for fraud detection and algorithmic trading. In manufacturing, 
+AI powers automation and quality control. The potential applications of AI are virtually limitless, 
+but so are the ethical considerations we must address. Privacy, bias, accountability, and job displacement 
+are all critical concerns as we continue to develop and deploy AI systems. Educational institutions are 
+increasingly focusing on AI literacy and ethics in their curricula. The future of AI lies not just in 
+technological advancement but in ensuring these systems are developed and used responsibly for the benefit of humanity.
+
+
+===== ABSTRACT SUMMARY =====
+Artificial Intelligence, spanning machine learning, natural language processing, computer vision, and robotics, is rapidly reshaping sectors such as healthcare, finance, manufacturing, and entertainment by enhancing diagnosis, fraud detection, automation, and more. While its applications appear boundless, the technology raises critical ethical issues—including privacy, bias, accountability, and workforce displacement—that must be addressed through responsible development, AI literacy, and ethical education.
+
+===== DETAILED SUMMARY =====
+Artificial Intelligence (AI) has emerged as a transformative technology, encompassing capabilities such as machine learning, natural language processing, computer vision, and robotics. It is already being applied across a wide spectrum of sectors—enhancing disease diagnosis in healthcare, enabling fraud detection and algorithmic trading in finance, and driving automation and quality control in manufacturing and entertainment. While the potential uses of AI appear virtually limitless, the technology also raises significant ethical challenges, including privacy violations, algorithmic bias, accountability gaps, and the risk of large‑scale job displacement. To address these issues, educational institutions are increasingly integrating AI literacy and ethics into their curricula, preparing a workforce capable of responsible development and oversight. Ultimately, the future impact of AI will depend not only on continued technical advances but also on how responsibly the technology is designed, regulated, and deployed for the benefit of humanity.
+
+===== KEY POINTS =====
+- AI is a transformative technology encompassing machine learning, natural language processing, computer vision, and robotics.  
+- It is applied across multiple industries:  
+  - **Healthcare:** improves disease diagnosis accuracy and speed.  
+  - **Finance:** enables fraud detection and algorithmic trading.  
+  - **Manufacturing:** drives automation and quality control.  
+  - **Entertainment** and other sectors also benefit.  
+- The potential applications of AI are virtually limitless.  
+- Significant ethical considerations accompany AI development:  
+  - Privacy concerns  
+  - Bias in algorithms  
+  - Accountability for AI decisions  
+  - Job displacement impacts  
+- Educational institutions are increasingly incorporating AI literacy and ethics into curricula.  
+- The future of AI depends not only on technological advances but on responsible development and use for humanity’s benefit.

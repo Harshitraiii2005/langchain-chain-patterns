@@ -1,0 +1,31 @@
+
+===== ROUTER CHAIN GRAPH =====
+                                            +--------------+                                             
+                                         ***| router_input |***                                          
+                                  *******   +--------------+   *******                                   
+                           *******         ***           ***          *******                            
+                    *******              **                 *                *******                     
+                ****                   **                    **                     ****                 
++----------------+            +----------+            +-----------------+            +----------------+  
+| PromptTemplate |**          | ChatGroq |            | StrOutputParser |           *| PromptTemplate |  
++----------------+  *******   +----------+*           +-----------------+    ******* +----------------+  
+                           *******         ***           ***          *******                            
+                                  *******     **        *      *******                                   
+                                         ****   **    **   ****                                          
+                                           +---------------+                                             
+                                           | router_output |                                             
+                                           +---------------+                                             
+
+
+===== RESULT =====
+**Multiple‑Choice Questions – Artificial Intelligence (AI)**  
+
+| # | Question | Options (A‑D) | Correct Answer | Brief Explanation |
+|---|----------|---------------|----------------|-------------------|
+| 1 | Which of the following best describes **supervised learning**? | A. The model learns from unlabeled data and discovers hidden patterns.<br>**B.** The model is trained on input‑output pairs where the correct answer is provided.<br>C. The model updates itself continuously in a live environment.<br>D. The model uses reinforcement signals from a reward function. | **B** | In supervised learning, each training example includes the desired output (label) that the algorithm tries to predict. |
+| 2 | The **Turing Test**, proposed by Alan Turing, is intended to evaluate a machine’s ability to: | A. Solve complex mathematical equations faster than a human.<br>B. Generate realistic images from text prompts.<br>**C.** Exhibit behavior indistinguishable from that of a human.<br>D. Optimize a reinforcement‑learning policy. | **C** | If an evaluator cannot reliably tell the machine from a human based on conversation, the machine is said to have passed the test. |
+| 3 | Which architecture is most commonly used for **sequence‑to‑sequence** tasks such as machine translation? | A. Convolutional Neural Network (CNN)<br>**B.** Encoder‑Decoder Recurrent Neural Network (RNN) with attention<br>C. Generative Adversarial Network (GAN)<br>D. Decision Tree Ensemble | **B** | The encoder processes the source sequence, the decoder generates the target sequence, and attention helps focus on relevant parts of the input. |
+| 4 | In the context of **ethical AI**, the principle of **fairness** primarily aims to: | A. Maximize model accuracy regardless of data bias.<br>B. Ensure the model runs efficiently on low‑power devices.<br>C. Prevent the model from overfitting to training data.<br>**D.** Reduce disparate impact on protected groups (e.g., race, gender). | **D** | Fairness seeks to avoid systematic disadvantages for certain groups, often measured by metrics such as equalized odds or demographic parity. |
+| 5 | Which of the following statements about **transformer models** (e.g., BERT, GPT) is **false**? | **A.** They rely on recurrent connections to process sequences.<br>B. They use self‑attention mechanisms to capture long‑range dependencies.<br>C. They can be pre‑trained on large corpora and fine‑tuned for downstream tasks.<br>D. Positional encodings are added to retain order information. | **A** | Transformers discard recurrence; they process all tokens in parallel using attention, unlike RNNs. |
+
+Feel free to use these questions as a quiz, study guide, or interview prep!

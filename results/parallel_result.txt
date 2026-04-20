@@ -1,0 +1,401 @@
+ CHAIN GRAPH 
+                    +---------------------------------------+                      
+                    | Parallel<explanation,report,mcq>Input |                      
+                    +---------------------------------------+                      
+                       *****            *             *****                        
+                  *****                 *                  *****                   
+               ***                      *                       ***                
++----------------+              +----------------+            +----------------+   
+| PromptTemplate |              | PromptTemplate |            | PromptTemplate |   
++----------------+              +----------------+            +----------------+   
+          *                             *                               *          
+          *                             *                               *          
+          *                             *                               *          
+    +----------+                  +----------+                    +----------+     
+    | ChatGroq |                  | ChatGroq |                    | ChatGroq |     
+    +----------+                  +----------+                    +----------+     
+          *                             *                               *          
+          *                             *                               *          
+          *                             *                               *          
++-----------------+            +-----------------+            +-----------------+  
+| StrOutputParser |            | StrOutputParser |            | StrOutputParser |  
++-----------------+****        +-----------------+         ***+-----------------+  
+                       *****            *             *****                        
+                            *****       *        *****                             
+                                 ***    *     ***                                  
+                    +----------------------------------------+                     
+                    | Parallel<explanation,report,mcq>Output |                     
+                    +----------------------------------------+                     
+
+
+ RESULTS 
+
+
+ TEACHER EXPLANATION
+## Machine Learning – A Teacher’s Walk‑through  
+
+### 1. What Is Machine Learning (ML)?
+
+**Definition**  
+Machine Learning is a sub‑field of artificial intelligence (AI) that gives computers the ability to *learn* from data—i.e., to improve their performance on a task without being explicitly programmed for every possible situation.
+
+**Why It Matters**  
+- **Automation**: Enables systems to handle tasks that would be tedious or impossible to code rule‑by‑rule (spam filtering, speech recognition, medical diagnosis).  
+- **Adaptability**: Models can update themselves as new data arrive, staying current without a complete rewrite.  
+- **Insight**: By finding patterns in data, ML can reveal hidden relationships that help us make better decisions.
+
+---
+
+### 2. Core Idea: From Data → Model → Prediction
+
+| Step | What Happens? | Analogy |
+|------|---------------|---------|
+| **1️⃣ Data Collection** | Gather examples (features + labels). | Collecting pictures of cats and dogs. |
+| **2️⃣ Feature Engineering** | Turn raw data into useful numbers (features). | Measuring the ear shape, fur pattern, etc. |
+| **3️⃣ Model Choice** | Pick a mathematical structure (linear regression, decision tree, neural network…). | Choosing a type of “recipe” to combine ingredients. |
+| **4️⃣ Training** | Feed the model the data, adjust its internal parameters to reduce error. | Tasting the dish repeatedly and tweaking spices. |
+| **5️⃣ Evaluation** | Test the model on unseen data to see how well it generalizes. | Letting friends taste the dish and give feedback. |
+| **6️⃣ Deployment** | Use the trained model in a real‑world system. | Serving the dish to customers. |
+
+---
+
+### 3. Types of Machine Learning
+
+| Category | What It Does | Typical Use‑Cases | Example Algorithm |
+|----------|--------------|-------------------|-------------------|
+| **Supervised Learning** | Learns a mapping from inputs **X** to known outputs **Y** (labels). | Image classification, spam detection, house‑price prediction. | Linear Regression, Support Vector Machines, Random Forests, Convolutional Neural Networks. |
+| **Unsupervised Learning** | Finds structure in data **without** explicit labels. | Customer segmentation, anomaly detection, dimensionality reduction. | K‑means clustering, Principal Component Analysis (PCA), Autoencoders. |
+| **Semi‑Supervised Learning** | Uses a small set of labeled data + a large set of unlabeled data. | When labeling is expensive (medical imaging). | Graph‑based methods, self‑training neural nets. |
+| **Reinforcement Learning (RL)** | An *agent* learns by interacting with an environment, receiving rewards/punishments. | Game playing (AlphaGo), robotics, recommendation systems. | Q‑learning, Policy Gradient, Deep Q‑Network (DQN). |
+| **Self‑Supervised Learning** | Creates its own supervisory signal from the raw data (e.g., predict missing parts). | Language models (GPT), vision transformers. | Masked language modeling, contrastive learning. |
+
+---
+
+### 4. A Simple Example: Predicting House Prices (Supervised Regression)
+
+1. **Data**: Each house is described by features like size (sq ft), number of bedrooms, age, location score, etc. The label is the sale price.  
+2. **Model**: Linear regression – predicts price = *w₁·size + w₂·bedrooms + … + b*.  
+3. **Training**: Find the weights **w** and bias **b** that minimize the squared error between predicted and actual prices (using gradient descent or a closed‑form solution).  
+4. **Evaluation**: Compute Mean Absolute Error (MAE) on a hold‑out test set to see how far off predictions are on unseen houses.  
+5. **Deployment**: Integrate the model into a real‑estate website so users can get an instant price estimate.
+
+---
+
+### 5. Key Concepts & Vocabulary
+
+| Concept | Intuition | Formal Note |
+|---------|-----------|-------------|
+| **Feature** | A measurable property of an example (e.g., “age of a car”). | Vector **x** ∈ ℝⁿ. |
+| **Label** | The target we want to predict (e.g., “price”). | Scalar **y** (regression) or class **c** (classification). |
+| **Loss Function** | Quantifies how wrong a prediction is. | e.g., Mean Squared Error (MSE), Cross‑Entropy. |
+| **Optimization** | Adjust model parameters to minimize loss. | Gradient Descent, Adam, L‑BFGS. |
+| **Overfitting** | Model memorizes training data, fails on new data. | High training accuracy, low test accuracy. |
+| **Underfitting** | Model is too simple, cannot capture patterns. | Both training and test accuracy are low. |
+| **Regularization** | Techniques to prevent overfitting (e.g., L1/L2 penalties, dropout). |
+| **Cross‑Validation** | Repeatedly split data to get reliable performance estimates. |
+| **Bias‑Variance Trade‑off** | Balancing error from erroneous assumptions (bias) vs. sensitivity to data noise (variance). |
+| **Hyperparameter** | Settings you choose before training (e.g., learning rate, tree depth). | Tuned via grid search, random search, Bayesian optimization. |
+
+---
+
+### 6. The Machine‑Learning Workflow in the Classroom
+
+1. **Problem Definition** – What question are you trying to answer?  
+2. **Data Acquisition** – Where does the data live? (SQL, CSV, sensors, web APIs).  
+3. **Exploratory Data Analysis (EDA)** – Visualize distributions, spot missing values, detect outliers.  
+4. **Pre‑processing** – Clean data, handle missing values, encode categorical variables, scale numeric features.  
+5. **Model Selection** – Start simple (baseline) → try more complex models.  
+6. **Training & Tuning** – Use a validation set or cross‑validation to adjust hyperparameters.  
+7. **Evaluation** – Choose appropriate metrics: accuracy, precision/recall, F1, ROC‑AUC (classification); RMSE, MAE (regression).  
+8. **Interpretability** – Feature importance, SHAP values, LIME, partial dependence plots.  
+9. **Deployment** – Export model (pickle, ONNX, TensorFlow SavedModel), set up an API, monitor performance.  
+10. **Maintenance** – Retrain periodically, watch for data drift, update features.
+
+---
+
+### 7. Common Pitfalls & How to Avoid Them
+
+| Pitfall | Why It Happens | Remedy |
+|---------|----------------|--------|
+| **Garbage In, Garbage Out** | Poor data quality (missing, biased, mislabeled). | Rigorous data cleaning; sanity‑check samples. |
+| **Leakage** | Training data contains information that would not be available at prediction time. | Keep a strict separation between training and test; avoid using future data. |
+| **Imbalanced Classes** | One class dominates (e.g., 99% “not fraud”). | Resampling (SMOTE, undersampling), class‑weighting, appropriate metrics (precision‑recall). |
+| **Too Many Features** | Curse of dimensionality; overfitting. | Feature selection, dimensionality reduction (PCA), regularization. |
+| **Ignoring Model Explainability** | Black‑box models can’t be trusted in high‑stakes domains. | Use interpretable models or post‑hoc explanation tools. |
+| **No Baseline** | You don’t know if your fancy model actually improves anything. | Start with a simple model (e.g., mean predictor) and compare. |
+| **Static Model** | Data distribution changes over time (concept drift). | Set up monitoring and periodic retraining pipelines. |
+
+---
+
+### 8. A Quick “Hands‑On” Mini‑Project (Python Sketch)
+
+```python
+# 1️⃣ Load data
+import pandas as pd
+df = pd.read_csv('housing.csv')
+
+# 2️⃣ Simple EDA
+print(df.describe())
+df.hist(figsize=(10,8))
+
+# 3️⃣ Prepare features / label
+X = df[['sqft', 'bedrooms', 'age', 'location_score']]
+y = df['price']
+
+# 4️⃣ Train‑test split
+from sklearn.model_selection import train_test_split
+X_train, X_test, y_train, y_test = train_test_split(
+    X, y, test_size=0.2, random_state=42)
+
+# 5️⃣ Model (Linear Regression)
+from sklearn.linear_model import LinearRegression
+model = LinearRegression()
+model.fit(X_train, y_train)
+
+# 6️⃣ Evaluate
+from sklearn.metrics import mean_absolute_error
+preds = model.predict(X_test)
+mae = mean_absolute_error(y_test, preds)
+print(f"MAE on test set: ${mae:,.0f}")
+
+# 7️⃣ Inspect coefficients (interpretability)
+coef_df = pd.DataFrame({
+    'feature': X.columns,
+    'weight': model.coef_
+})
+print(coef_df)
+```
+
+*What you learn*: data loading, basic cleaning, splitting, training a model, evaluating, and interpreting coefficients—all in ~15 lines of code.
+
+---
+
+### 9. Where to Go Next
+
+| Path | Suggested Topics | Resources |
+|------|------------------|-----------|
+| **Deep Learning** | Neural nets, CNNs for images, RNNs/Transformers for sequences. | *Deep Learning* – Goodfellow, Bengio & Courville; fast.ai courses. |
+| **Probabilistic Modeling** | Bayesian inference, Gaussian processes. | *Probabilistic Machine Learning* – Kevin Murphy. |
+| **Production ML (MLOps)** | Model versioning, CI/CD for ML, monitoring. | *Machine Learning Engineering* – Andriy Burkov; Google’s MLOps guide. |
+| **Ethics & Fairness** | Bias detection, privacy, model accountability. | *Weapons of Math Destruction* – Cathy O'Neil; AI Ethics courses (Coursera, edX). |
+| **Specialized Domains** | NLP, Computer Vision, Reinforcement Learning, Time‑Series Forecasting. | Domain‑specific MOOCs, Kaggle competitions. |
+
+---
+
+### 10. Recap – The Teacher’s Takeaway
+
+1. **Machine Learning = learning from data** – not hard‑coded rules.  
+2. **Supervised vs. Unsupervised vs. RL** – three broad problem families.  
+3. **Workflow matters** – data quality, proper validation, and continuous monitoring are as important as the algorithm itself.  
+4. **Start simple** – a linear model often tells you a lot before you move to deep nets.  
+5. **Think critically** – understand assumptions, watch for bias, and keep the human in the loop.
+
+Feel free to ask follow‑up questions, request deeper dives into any of the sub‑topics, or get a hands‑on notebook for a specific problem you have in mind!
+
+REPORT 
+# Machine Learning – A Comprehensive Report  
+
+**Prepared for:** *[Your Organization / Audience]*  
+**Date:** 20 April 2026  
+
+---  
+
+## Table of Contents
+1. [Executive Summary](#executive-summary)  
+2. [Introduction](#introduction)  
+3. [Historical Evolution](#historical-evolution)  
+4. [Fundamental Concepts & Terminology](#fundamental-concepts--terminology)  
+5. [Major Categories of Machine Learning](#major-categories-of-machine-learning)  
+   - 5.1 Supervised Learning  
+   - 5.2 Unsupervised Learning  
+   - 5.3 Semi‑Supervised Learning  
+   - 5.4 Reinforcement Learning  
+   - 5.5 Self‑Supervised Learning (Emerging)  
+6. [Key Algorithms & Model Families](#key-algorithms--model-families)  
+7. [Model Development Lifecycle](#model-development-lifecycle)  
+8. [Hardware & Infrastructure Landscape (2024‑2026)](#hardware--infrastructure-landscape-2024-2026)  
+9. [Real‑World Applications](#real-world-applications)  
+10. [Challenges & Risks](#challenges--risks)  
+11. [Regulatory & Ethical Considerations](#regulatory--ethical-considerations)  
+12. [Future Trends & Emerging Directions (2026‑2035)](#future-trends--emerging-directions-2026-2035)  
+13. [Conclusion](#conclusion)  
+14. [Selected Bibliography & Resources](#selected-bibliography--resources)  
+
+---  
+
+## Executive Summary
+Machine Learning (ML) has transitioned from a research niche to a core technology that underpins modern products, services, and decision‑making across virtually every industry. The past decade has been defined by three converging forces:
+
+1. **Algorithmic breakthroughs** – especially deep learning, transformer architectures, and self‑supervised learning.  
+2. **Scaling of compute** – GPUs, TPUs, and emerging AI‑specific silicon have enabled training models with billions of parameters.  
+3. **Data proliferation** – massive, multimodal datasets (text, images, video, sensor streams) are now routinely available.
+
+These forces have produced a new generation of models (e.g., GPT‑4, PaLM‑2, Stable Diffusion, AlphaFold‑2) that demonstrate capabilities once thought exclusive to human cognition. At the same time, the rapid adoption raises pressing concerns around bias, privacy, interpretability, and environmental impact. This report provides a systematic overview of the state of ML as of 2026, outlines the end‑to‑end development workflow, highlights high‑impact applications, and points to the strategic directions that will shape the field over the next decade.
+
+---  
+
+## Introduction
+Machine Learning is a sub‑field of artificial intelligence (AI) focused on building systems that improve their performance on a specific task through experience (i.e., data) rather than explicit programming. In practical terms, an ML system learns a mapping **f**: **X → Y** (inputs to outputs) by optimizing a loss function on a training dataset, then generalizes this mapping to unseen data.
+
+Key motivations for adopting ML include:
+
+- **Automation of repetitive or complex tasks** (e.g., image classification, speech transcription).  
+- **Discovery of hidden patterns** in large, high‑dimensional datasets (e.g., fraud detection, genomics).  
+- **Personalization** of services at scale (e.g., recommendation engines).  
+- **Decision support** under uncertainty (e.g., predictive maintenance, medical diagnosis).  
+
+---  
+
+## Historical Evolution
+| Period | Milestones | Impact |
+|--------|------------|--------|
+| **1950‑1970** | Perceptron (Rosenblatt, 1958); early pattern‑recognition work | First proof‑of‑concept for learning from data. |
+| **1980‑1990** | Back‑propagation (Rumelhart et al., 1986); Support Vector Machines (Cortes & Vapnik, 1995) | Enabled multi‑layer neural networks; introduced kernel methods. |
+| **1990‑2005** | Ensemble methods (Random Forests, Boosting); emergence of large‑scale datasets (e.g., ImageNet 2009) | Demonstrated that algorithmic ensembles outperform single models; data became a driver of progress. |
+| **2006‑2012** | Deep learning resurgence (Hinton et al., 2006; Krizhevsky et al., 2012) | Convolutional Neural Networks (CNNs) achieved breakthrough image classification performance. |
+| **2013‑2018** | Sequence‑to‑sequence models; attention mechanism (Vaswani et al., 2017); Transformers dominate NLP | Shift from recurrent to attention‑based architectures; scaling laws identified. |
+| **2019‑2022** | Large Language Models (GPT‑3, 2020; PaLM, 2022); Diffusion models for generative art; AlphaFold‑2 (2021) | Demonstrated emergent capabilities; cross‑modal and scientific breakthroughs. |
+| **2023‑2026** | Foundation models as “services”; Retrieval‑augmented generation (RAG); Efficient fine‑tuning (LoRA, QLoRA); AI‑specific chips (e.g., NVIDIA Hopper, Google TPU‑v5); Regulation (EU AI Act, US AI Bill of Rights) | Consolidation of ML into product ecosystems; focus on efficiency, controllability, and compliance. |
+
+---  
+
+## Fundamental Concepts & Terminology
+| Term | Definition |
+|------|------------|
+| **Dataset** | Collection of examples (samples) each comprising input features **x** and optionally a label **y**. |
+| **Feature** | Individual measurable property or attribute used as input. |
+| **Model** | Parameterized function (e.g., neural network) that maps inputs to outputs. |
+| **Training** | Process of adjusting model parameters to minimize a loss function on a training set. |
+| **Loss / Cost Function** | Quantifies prediction error (e.g., cross‑entropy, mean‑squared error). |
+| **Optimization Algorithm** | Method for updating parameters (e.g., SGD, Adam, LAMB). |
+| **Generalization** | Ability of a model to perform well on unseen data. |
+| **Overfitting / Underfitting** | Excessive memorization vs. insufficient learning of patterns. |
+| **Regularization** | Techniques to reduce overfitting (e.g., dropout, weight decay). |
+| **Evaluation Metrics** | Task‑specific measures (accuracy, F1‑score, ROC‑AUC, BLEU, perplexity, etc.). |
+| **Explainability / Interpretability** | Methods that make model decisions understandable (SHAP, LIME, counterfactuals). |
+| **Bias & Fairness** | Systematic error that disadvantages protected groups; measured via disparate impact, equalized odds, etc. |
+| **Model Compression** | Reducing model size/latency (pruning, quantization, knowledge distillation). |
+
+---  
+
+## Major Categories of Machine Learning  
+
+### 5.1 Supervised Learning
+- **Goal:** Learn a mapping from inputs **X** to known outputs **Y**.  
+- **Typical Tasks:** Classification, regression, object detection, speech recognition.  
+- **Representative Algorithms:** Logistic regression, Decision Trees, Gradient Boosted Machines (XGBoost, LightGBM), Convolutional Neural Networks, Transformers.
+
+### 5.2 Unsupervised Learning
+- **Goal:** Discover structure in data without explicit labels.  
+- **Typical Tasks:** Clustering, dimensionality reduction, density estimation, generative modeling.  
+- **Representative Algorithms:** k‑means, Gaussian Mixture Models, Autoencoders, Variational Autoencoders (VAE), Diffusion models, Self‑Organizing Maps.
+
+### 5.3 Semi‑Supervised Learning
+- **Goal:** Leverage a small labeled set together with a large unlabeled set.  
+- **Key Techniques:** Pseudo‑labeling, consistency regularization, graph‑based methods, self‑training with foundation models.
+
+### 5.4 Reinforcement Learning (RL)
+- **Goal:** Learn a policy that maximizes cumulative reward through interaction with an environment.  
+- **Key Paradigms:** Model‑free (Q‑learning, Policy Gradient, PPO), Model‑based, Multi‑agent RL.  
+- **Notable Achievements:** AlphaGo/AlphaZero, OpenAI Five, robotic manipulation with RL‑based sim‑to‑real transfer.
+
+### 5.5 Self‑Supervised Learning (Emerging)
+- **Goal:** Formulate an auxiliary pretext task that generates its own supervision from raw data.  
+- **Typical Pretext Tasks:** Masked language modeling (BERT), contrastive image representation (SimCLR), next‑frame prediction, audio‑visual correspondence.  
+- **Why Important:** Enables training on massive unlabeled corpora, leading to foundation models that can be fine‑tuned for downstream tasks with minimal labeled data.
+
+---  
+
+## Key Algorithms & Model Families  
+
+| Model Family | Core Idea | Typical Use‑Cases | Recent Variants (2024‑2026) |
+|--------------|----------|-------------------|-----------------------------|
+| **Convolutional Neural Networks (CNNs)** | Local receptive fields + weight sharing | Image classification, medical imaging, video analysis | EfficientNet‑V2, ConvNeXt, Swin‑Transformer (vision‑focused) |
+| **Transformer & Attention Models** | Self‑attention to capture global dependencies | NLP, multimodal (text‑image‑audio), code generation | GPT‑4‑Turbo, PaLM‑2, LLaMA‑2, Gemini (Google), Mistral‑7B, Falcon‑180B |
+| **Graph Neural Networks (GNNs)** | Message passing on graph structures | Social network analysis, molecular property prediction, recommender systems | Graphormer, GATv2, DiffPool |
+| **Diffusion Models** | Iterative denoising to generate data | Image synthesis, video generation, audio generation | Stable Diffusion XL, Imagen 2.0, AudioLDM |
+| **Reinforcement Learning Algorithms** | Policy/value optimization via interaction | Game AI, robotics, autonomous driving, resource management | MuZero‑v2, Dreamer‑V3, Offline RL (CQL, IQL) |
+| **Probabilistic / Bayesian Models** | Explicit uncertainty modeling | Forecasting, medical decision support, active learning | Deep Gaussian Processes, Bayesian Neural Networks with variational inference |
+| **Hybrid / Multimodal Foundations** | Joint training on multiple modalities | Vision‑language, audio‑text, robotics perception | CLIP‑v2, Flamingo, PaLM‑E, Kosmos‑2 |
+
+---  
+
+## Model Development Lifecycle  
+
+1. **Problem Definition & Success Criteria**  
+   - Business/clinical objective, KPI selection, risk assessment.  
+
+2. **Data Collection & Governance**  
+   - Source identification, labeling strategy, data contracts, privacy compliance (GDPR, CCPA, HIPAA).  
+
+3. **Exploratory Data Analysis (EDA)**  
+   - Distribution checks, missing‑value handling, outlier detection, bias audit.  
+
+4. **Feature Engineering / Representation Learning**  
+   - Hand‑crafted features (for tabular), embeddings (word2vec, BERT), learned representations (autoencoders).  
+
+5. **Model Selection & Baseline Construction**  
+   - Simple models (logistic regression) → strong baselines (XGBoost) → deep architectures.  
+
+6. **Training & Hyper‑parameter Optimization**  
+   - Grid/Random search, Bayesian optimization (Optuna, Hyperopt), neural architecture search (NAS).  
+
+7. **Evaluation & Validation**  
+   - Hold‑out test, cross‑validation, stratified sampling, robustness checks (adversarial, distribution shift).  
+
+8. **Interpretability & Fairness Audits**  
+   - Global/local explanations, counterfactual analysis, fairness metrics, mitigation (re‑weighting, adversarial debiasing).  
+
+9. **Deployment Strategy**  
+   - **Batch** (offline scoring), **Online** (REST API, streaming), **Edge** (on‑device inference).  
+   - Containerization (Docker), orchestration (Kubernetes), model serving frameworks (TensorFlow Serving, TorchServe, Triton Inference Server).  
+
+10. **Monitoring & Maintenance**  
+    - Data drift detection, performance decay alerts, automated retraining pipelines (MLOps).  
+
+11. **Governance & Documentation**  
+    - Model cards, datasheets, risk registers, compliance checklists.  
+
+---  
+
+## Hardware & Infrastructure Landscape (2024‑2026)  
+
+| Platform | Architecture | Peak FP16/FP8 Throughput | Notable Features | Typical Use‑Cases |
+|----------|--------------|--------------------------|------------------|-------------------|
+| **NVIDIA Hopper H100** | GPU (CUDA, Tensor Cores) | ~1 PFLOP (FP16) | Multi‑Instance GPU (MIG), DPX for transformer ops | Large‑scale training, inference at data‑center scale |
+| **Google TPU v5p** | ASIC (Matrix Multiply Units) | ~1.2 PFLOP (bfloat16) | Integrated high‑speed interconnect (TPU‑Pod), low‑latency serving | Foundation model pre‑training, TPUs for research labs |
+| **AMD Instinct MI300X** | GPU + CPU heterogenous | ~0.9 PFLOP (FP16) | Unified memory, AMD ROCm ecosystem | Mixed‑precision workloads, scientific ML |
+| **Intel Gaudi 2** | AI‑accelerator ASIC | ~0.7 PFLOP (FP16) | Optimized for large‑batch training, open‑source Habana SDK | Enterprise AI, cost‑effective training |
+| **Edge AI Chips** | ARM‑based NPUs (e.g., Qualcomm Snapdragon X Elite, Apple Neural Engine) | 10‑30 TOPS (INT8) | On‑device privacy, low power | Mobile assistants, AR/VR, IoT inference |
+| **Quantum‑
+
+MCQs
+**Multiple‑Choice Questions – Machine Learning**
+
+| # | Question | Options (A‑D) |
+|---|----------|---------------|
+| 1 | Which of the following best describes **supervised learning**? | A. The model learns from unlabeled data.<br>B. The model is trained using input‑output pairs.<br>C. The algorithm searches for patterns without any guidance.<br>D. The model continuously updates itself during deployment. |
+| 2 | In a **binary classification** problem, which loss function is most commonly used? | A. Mean Squared Error (MSE)<br>B. Hinge loss<br>C. Cross‑entropy loss<br>D. Poisson loss |
+| 3 | Which algorithm is **not** a type of ensemble method? | A. Random Forest<br>B. Gradient Boosting Machine (GBM)<br>C. K‑Nearest Neighbors (K‑NN)<br>D. AdaBoost |
+| 4 | What is the primary purpose of **regularization** in a linear model? | A. To increase the number of features<br>B. To reduce overfitting by penalizing large coefficients<br>C. To speed up gradient descent<br>D. To convert a regression problem into a classification problem |
+| 5 | Which of the following statements about **k‑means clustering** is FALSE? | A. It requires the number of clusters **k** to be specified beforehand.<br>B. It can handle categorical variables directly.<br>C. It minimizes the within‑cluster sum of squared distances.<br>D. It is sensitive to the initial placement of centroids. |
+| 6 | In a **convolutional neural network (CNN)**, the operation that reduces the spatial dimensions of the feature map is called: | A. Convolution<br>B. Pooling<br>C. Activation<br>D. Dropout |
+| 7 | Which evaluation metric is most appropriate for an **imbalanced binary classification** problem where the positive class is rare? | A. Accuracy<br>B. Precision<br>C. Recall<br>D. F1‑score |
+| 8 | The **bias‑variance trade‑off** refers to the tension between: | A. Model complexity and training time<br>B. Under‑fitting and over‑fitting<br>C. Supervised and unsupervised learning<br>D. Feature selection and dimensionality reduction |
+| 9 | Which of the following is a **generative** model? | A. Logistic Regression<br>B. Support Vector Machine<br>C. Naïve Bayes<br>D. Decision Tree |
+|10| In reinforcement learning, the **policy** is: | A. The reward function that the agent tries to maximize.<br>B. The mapping from states (or state‑action pairs) to actions.<br>C. The set of all possible states.<br>D. The discount factor used in the Bellman equation. |
+
+---
+
+### Answer Key
+
+1. **B** – Supervised learning uses labeled input‑output pairs.  
+2. **C** – Binary cross‑entropy (logistic loss) is standard for binary classification.  
+3. **C** – K‑Nearest Neighbors is a lazy, instance‑based learner, not an ensemble.  
+4. **B** – Regularization penalizes large weights to curb overfitting.  
+5. **B** – k‑means works only with numeric (continuous) features; categorical data need preprocessing.  
+6. **B** – Pooling (e.g., max‑pooling) reduces spatial dimensions.  
+7. **D** – F1‑score balances precision and recall, useful when classes are imbalanced.  
+8. **B** – The trade‑off is between under‑fitting (high bias) and over‑fitting (high variance).  
+9. **C** – Naïve Bayes models the joint distribution \(P(X, Y)\) → generative.  
+10. **B** – A policy defines the action selection strategy given a state (or state‑action).

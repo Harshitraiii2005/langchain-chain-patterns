@@ -1,0 +1,150 @@
+===== GRAPH =====
+     +-------------+       
+     | PromptInput |       
+     +-------------+       
+            *              
+            *              
+            *              
+    +----------------+     
+    | PromptTemplate |     
+    +----------------+     
+            *              
+            *              
+            *              
+      +----------+         
+      | ChatGroq |         
+      +----------+         
+            *              
+            *              
+            *              
+   +-----------------+     
+   | StrOutputParser |     
+   +-----------------+     
+            *              
+            *              
+            *              
++-----------------------+  
+| StrOutputParserOutput |  
++-----------------------+  
+            *              
+            *              
+            *              
+        +--------+         
+        | Lambda |         
+        +--------+         
+            *              
+            *              
+            *              
+    +----------------+     
+    | PromptTemplate |     
+    +----------------+     
+            *              
+            *              
+            *              
+      +----------+         
+      | ChatGroq |         
+      +----------+         
+            *              
+            *              
+            *              
+   +-----------------+     
+   | StrOutputParser |     
+   +-----------------+     
+            *              
+            *              
+            *              
++-----------------------+  
+| StrOutputParserOutput |  
++-----------------------+  
+            *              
+            *              
+            *              
+        +--------+         
+        | Lambda |         
+        +--------+         
+            *              
+            *              
+            *              
+    +----------------+     
+    | PromptTemplate |     
+    +----------------+     
+            *              
+            *              
+            *              
+      +----------+         
+      | ChatGroq |         
+      +----------+         
+            *              
+            *              
+            *              
+   +-----------------+     
+   | StrOutputParser |     
+   +-----------------+     
+            *              
+            *              
+            *              
++-----------------------+  
+| StrOutputParserOutput |  
++-----------------------+  
+
+
+===== RESULT =====
+**Evaluation of Your “Detailed Review” Paragraph**  
+*Course: Academic Writing / Critical Analysis*  
+*Instructor: Dr. [Your Name]*  
+
+---
+
+### Overall Impression  
+Your paragraph functions as a mini‑review of a (presumed) introductory AI overview. It succeeds in striking a balance between enthusiasm for the technology and caution about its societal implications. The structure—strengths followed by a concise “issues‑remedy” table—demonstrates an awareness of scholarly critique formats and makes the feedback easy to scan.  
+
+**Score (out of 10): 7.5**  
+
+| Criterion | Rating | Comments |
+|-----------|--------|----------|
+| **Clarity of Thesis** | 8 | You clearly articulate that the original paragraph is both evocative and in need of more evidence. |
+| **Depth of Analysis** | 7 | You identify several substantive gaps (evidence, taxonomy, ethics) but could probe a bit deeper into why those gaps matter for different audiences. |
+| **Use of Evidence** | 6 | The review itself would be stronger if you cited a couple of concrete sources (e.g., a recent AI‑in‑medicine study) to illustrate the “lack of evidence” point. |
+| **Organization & Formatting** | 9 | The table is an excellent pedagogical tool; the brief “Concise Summary” and “Key Points” sections reinforce the main take‑aways. |
+| **Style & Mechanics** | 8 | The prose is polished, but a few sentences are dense (e.g., the opening “The paragraph offers a sweeping, high‑level portrait…”) and could be split for readability. |
+| **Originality / Insight** | 8 | You move beyond surface‑level praise and pinpoint specific scholarly expectations (citations, taxonomy, ethical nuance). |
+
+---
+
+### Strengths  
+
+1. **Balanced Perspective** – You commend the author for avoiding outright techno‑optimism while still celebrating AI’s promise. This shows you can recognize nuance.  
+2. **Pedagogical Tools** – The three‑column table (Issue / Explanation / Suggested Remedy) is a textbook example of how to give actionable feedback.  
+3. **Meta‑Commentary** – By providing a “Concise Summary” and “Key Points” after the critique, you model how a reviewer can distill a text for both specialist and lay audiences.  
+
+---
+
+### Areas for Improvement  
+
+| Area | Why It Matters | How to Strengthen It |
+|------|----------------|----------------------|
+| **Evidence for Your Claims** | As you note, scholarly readers expect citations. Your own critique will be more persuasive if you back it up. | Insert a parenthetical citation or two. Example: “Recent meta‑analyses show that AI‑driven radiology tools achieve *X%* higher sensitivity than human radiologists (Esteva et al., 2023).” |
+| **Specificity in Ethical Concerns** | You correctly identify that the original paragraph is “surface‑level,” but you could illustrate the depth you expect. | Offer a concrete scenario: “For instance, a facial‑recognition system trained on predominantly white faces can misidentify people of color at rates up to 34 % (Buolamwini & Gebru, 2018).” |
+| **Differentiating AI Sub‑domains** | Your suggestion to split “narrow AI” vs. “general‑purpose AI” is spot‑on, yet you could briefly explain why this distinction matters for the argument. | Add a sentence such as: “Distinguishing between narrow recommendation engines and large‑scale generative models clarifies whether the claimed ‘cross‑sector disruption’ is feasible today or remains speculative.” |
+| **Sentence Length & Readability** | Long, layered sentences can obscure meaning, especially for non‑specialists. | Break the opening sentence into two: “The paragraph offers a sweeping, high‑level portrait of artificial intelligence (AI) as both a technological catalyst and a cultural inflection point. Its strengths lie in vivid framing, comprehensive scope, and a balanced perspective.” |
+| **Explicit Grading Rubric** | As a college‑level review, it’s helpful to reference the rubric you’re using (e.g., “According to the course rubric, this work meets criteria X, Y, Z”). | Add a brief line: “According to the ‘Critical Review’ rubric, the work meets expectations for depth of analysis (8/10) but falls short on evidential support (6/10).” |
+
+---
+
+### Recommendations for Revision  
+
+1. **Add Two Concrete Citations** – Choose one from the medical‑AI literature and one from the ethics literature to illustrate the “lack of evidence” and “surface‑level ethics” points.  
+2. **Insert a Mini‑Glossary** – After the table, include a one‑sentence definition of “narrow AI” and “general‑purpose AI” to make the taxonomy suggestion concrete.  
+3. **Re‑format Long Sentences** – Aim for an average sentence length of 18–22 words. Use bullet points (as you already have) for dense information.  
+4. **Tie Feedback to Assignment Goals** – Briefly remind the student of the assignment’s learning outcomes (e.g., “Demonstrate ability to evaluate source credibility and articulate ethical implications”).  
+
+---
+
+### Closing Remarks  
+
+Your review demonstrates a strong grasp of what academic critique should look like: clear, evidence‑oriented, and actionable. By tightening the prose, bolstering your own statements with citations, and giving the original author a concrete taxonomy to work from, you will elevate the feedback from “helpful” to “exceptional.” Keep leveraging the table format—it’s a powerful way to communicate nuanced criticism in a digestible manner.
+
+**Next Steps:** Revise the paragraph using the suggestions above and resubmit for a final grade. If you’d like to discuss any of the recommended citations or the ethical scenarios, feel free to drop by office hours (Mon & Wed, 2–4 pm) or email me.  
+
+— Dr. [Your Name]  
+College of Liberal Arts – Writing & Rhetoric Department  
